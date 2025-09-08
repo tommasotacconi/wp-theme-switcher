@@ -25,6 +25,6 @@ function enqueue_theme_switcher()
 		plugin_dir_url(__FILE__) . 'theme-switcher.css',
 		array(),
 		'1.0.0'
-	)
+	);
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_switcher');
