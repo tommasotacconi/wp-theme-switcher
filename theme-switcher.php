@@ -22,7 +22,7 @@ function enqueue_theme_switcher()
 
 	wp_enqueue_style(
 		'theme-switcher-css',
-		plugin_dir_url(__FILE__) . 'theme-switcher.css',
+		plugin_dir_url(__FILE__) . 'style.css',
 		array(),
 		'1.0.0'
 	);
