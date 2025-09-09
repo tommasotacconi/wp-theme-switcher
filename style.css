@@ -39,7 +39,7 @@ body.light-theme {
 	}
 
 	/* Show codex-block linear gradient overlay */
-	:where([style*="rgb(36,41,47) 98%);"]) {
+	:where([style*="rgb(36,41,47) 98%);"])::before {
 		opacity: 1;
 	}
 
