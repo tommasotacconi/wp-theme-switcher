@@ -28,7 +28,7 @@ function enqueue_theme_switcher()
 	);
 }
 
-function inline_theme_css()
+function manage_theme_preference()
 {
 ?>
 	<script>
@@ -41,5 +41,6 @@ function inline_theme_css()
 	</script>
 <?php
 }
+
+add_action('wp_head', 'manage_theme_preference', 1);
 add_action('wp_enqueue_scripts', 'enqueue_theme_switcher');
-add_action('wp_head', 'inline_theme_css', 1);
