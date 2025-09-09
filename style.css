@@ -3,6 +3,20 @@
  */
 body {
 	transition: color 0.6s, background-color 0.3s;
+
+	/* Apply overlay to codex-block to transition linear gradient */
+	:where([style*="rgb(36,41,47) 98%);"]) {
+		position: relative;
+	}
+
+	:where([style*="rgb(36,41,47) 98%);"])::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg,rgb(132,123,236) 88%, #e6edf3 98%) !important;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
 }
 
 body.light-theme {
@@ -24,11 +38,10 @@ body.light-theme {
 		}
 	}
 
-	/* codex-block linear gradient */
-		:where([style*="rgb(36,41,47) 98%);"]) {
-		background: linear-gradient(90deg,rgb(132,123,236) 88%, #e6edf3 98%) !important;
+	/* Show codex-block linear gradient overlay */
+	:where([style*="rgb(36,41,47) 98%);"]) {
+		opacity: 1;
 	}
-
 
 	/* Button for theme switching */
 	:where(.wp-element-button, .wp-block-button__link) {
