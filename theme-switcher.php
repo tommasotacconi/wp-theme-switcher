@@ -36,9 +36,7 @@ function manage_theme_preference()
 		(function() {
 			let theme = localStorage.getItem('portfolio-theme') || 'light';
 			document.documentElement.setAttribute('data-theme', theme);
-			document.body.setAttribute('data-theme', theme);
-			document.documentElement.className += ' theme-' + theme;
-			document.body.className += ' theme-' + theme;
+			document.documentElement.className += ` ${theme}-theme`;
 		})();
 	</script>
 <?php

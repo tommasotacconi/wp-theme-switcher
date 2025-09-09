@@ -19,7 +19,7 @@ body {
 	}
 }
 
-body.light-theme {
+html.light-theme {
 	background-color: #e6edf3;
 	color: #24292f;
 
