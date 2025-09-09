@@ -20,7 +20,7 @@ body.light-theme {
 	}
 
 	/* codex-block linear gradient */
-		:where([style*="#24292f 98%);"]) {
+		:where([style*="rgb(36,41,47) 98%);"]) {
 		background: linear-gradient(90deg,rgb(132,123,236) 88%, #e6edf3 98%) !important;
 	}
 
