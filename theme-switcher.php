@@ -27,4 +27,19 @@ function enqueue_theme_switcher()
 		'1.0.0'
 	);
 }
+
+function inline_theme_css()
+{
+?>
+	<script>
+		// Check theme preference immeidately
+		(function() {
+			let theme = localStorage.getItem('theme') || 'light';
+			document.documentElement.setAttribute('data-theme', theme);
+			document.documentElement.className += ' theme-' + theme;
+		})();
+	</script>
+<?php
+}
 add_action('wp_enqueue_scripts', 'enqueue_theme_switcher');
+add_action('wp_head', 'inline_theme_css', 1);
