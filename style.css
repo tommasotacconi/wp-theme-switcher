@@ -6,13 +6,24 @@ body {
 }
 
 body.light-theme {
-	background-color: #fff;
-	color: #000;
+	background-color: #e6edf3;
+	color: #24292f;
 
 	header > div[style],
 	footer > div[style] {
 		background-color: #e6edf3 !important;
 	}
+
+	/* CV/Bio block color */
+	:where(.has-contrast-color) {
+		color: #24292f !important;
+	}
+
+	/* codex-block linear gradient */
+		:where([style*="#e6edf3 98%);"]) {
+		background: linear-gradient(90deg,rgb(132,123,236) 88%, #e6edf3 98%) !important;
+	}
+
 
 	/* Button for theme switching */
 	:where(.wp-element-button, .wp-block-button__link) {
