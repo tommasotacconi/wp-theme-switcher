@@ -17,6 +17,11 @@ body.light-theme {
 	/* CV/Bio block color */
 	:where(.has-contrast-color) {
 		color: #24292f !important;
+
+		/* link to internal page */
+		a[href="http://tacconiweb.com/dettagli-personali/"] {
+			color: #24292f;
+		}
 	}
 
 	/* codex-block linear gradient */
