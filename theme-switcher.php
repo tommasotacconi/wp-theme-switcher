@@ -34,9 +34,11 @@ function manage_theme_preference()
 	<script>
 		// Check theme preference immeidately
 		(function() {
-			let theme = localStorage.getItem('theme') || 'light';
+			let theme = localStorage.getItem('portfolio-theme') || 'light';
 			document.documentElement.setAttribute('data-theme', theme);
+			document.body.setAttribute('data-theme', theme);
 			document.documentElement.className += ' theme-' + theme;
+			document.body.className += ' theme-' + theme;
 		})();
 	</script>
 <?php
