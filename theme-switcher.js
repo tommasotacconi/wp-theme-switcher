@@ -12,11 +12,11 @@ class ThemeSwitcher {
             this.applyTheme(this.currentTheme);
             
             // Find and hook existing button
-            this.findAndHookButton();
+            this.findAndHookButtons();
         });
     }
     
-    findAndHookButton() {
+    findAndHookButtons() {
         // Try multiple selectors to find your existing button
         const possibleSelectors = [
             '#theme-toggle',
@@ -27,19 +27,20 @@ class ThemeSwitcher {
             '.dark-mode-toggle'
         ];
         
-        let button = null;
+        let buttons = [];
         
         // Find the button using various selectors
         for (let selector of possibleSelectors) {
-            button = document.querySelector(selector);
+            selectorButtons = document.querySelectorAll(selector);
+						for (let button of selectorButtons)
             if (button) {
+								buttons.push(button);
                 console.log(`Found theme button with selector: ${selector}`);
-                break;
             }
         }
         
         // If no button found with common selectors, scan for buttons with theme-related text
-        if (!button) {
+        if (!buttons.length) {
             const allButtons = document.querySelectorAll('button, a, .btn');
             for (let btn of allButtons) {
                 const text = btn.textContent.toLowerCase();
@@ -49,18 +50,19 @@ class ThemeSwitcher {
                 if (text.includes('theme') || text.includes('dark') || text.includes('light') ||
                     title.includes('theme') || title.includes('dark') || title.includes('light') ||
                     ariaLabel.includes('theme') || ariaLabel.includes('dark') || ariaLabel.includes('light')) {
-                    button = btn;
+                    buttons.push(btn);
                     console.log('Found theme button by content analysis:', btn);
-                    break;
                 }
             }
         }
         
-        if (button) {
+        if (buttons.length) {
             // Hook into the existing button
-            button.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent any default action
-                this.toggleTheme();
+            buttons.forEach(button => {
+							button.addEventListener('click', (e) => {
+								e.preventDefault(); // Prevent any default action
+								this.toggleTheme();
+							});
             });
             
             console.log('Successfully hooked into existing theme button');
