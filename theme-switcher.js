@@ -31,7 +31,7 @@ class ThemeSwitcher {
         
         // Find the button using various selectors
         for (let selector of possibleSelectors) {
-            selectorButtons = document.querySelectorAll(selector);
+            const selectorButtons = document.querySelectorAll(selector);
 						for (let button of selectorButtons)
             if (button) {
 								buttons.push(button);
