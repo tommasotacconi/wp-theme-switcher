@@ -46,10 +46,10 @@ body.light-theme {
 	/* Button for theme switching */
 	:where(.wp-element-button, .wp-block-button__link) {
 		background-color: unset;
-		border-color: #000;
+		border-color: #24292f;
 
   	&:hover {
-			background-color: #000;
+			background-color: #24292f;
   	}
  }
 
