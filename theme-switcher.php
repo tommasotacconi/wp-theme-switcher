@@ -40,7 +40,7 @@ function manage_theme_preference()
 				theme = 'light';
 			}
 			// Default to dark
-			theme = 'dark';
+			if (!theme) theme = 'dark';
 
 			document.documentElement.setAttribute('data-theme', theme);
 			document.documentElement.className += ` ${theme}-theme`;
