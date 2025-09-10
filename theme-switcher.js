@@ -76,6 +76,7 @@ class ThemeSwitcher {
         this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
         this.applyTheme(this.currentTheme);
         this.saveTheme();
+				console.log(btn);
 				const btnAnchor = btn.firstElementChild;
 				console.log(btnAnchor);
 				btnAnchor.innerHTML = this.currentTheme === 'dark' ? '☀️' : '🌙';
