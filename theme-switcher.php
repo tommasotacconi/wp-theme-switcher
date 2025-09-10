@@ -34,7 +34,14 @@ function manage_theme_preference()
 	<script>
 		// Check theme preference immediately and set emoji if necessary
 		(function() {
-			let theme = localStorage.getItem('portfolio-theme') || 'dark';
+			// Check localStorage or media system for preference
+			let theme = localStorage.getItem('portfolio-theme');
+			if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+				theme = 'light';
+			}
+			// Default to dark
+			theme = 'dark';
+
 			document.documentElement.setAttribute('data-theme', theme);
 			document.documentElement.className += ` ${theme}-theme`;
 
