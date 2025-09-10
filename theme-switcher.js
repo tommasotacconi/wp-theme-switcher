@@ -57,12 +57,11 @@ class ThemeSwitcher {
         }
         
         if (buttons.length) {
-						console.log(buttons);
-            // Hook into the existing button
-            buttons.forEach(button => {
+					// Hook into the existing button
+					buttons.forEach(button => {
 							button.addEventListener('click', (e) => {
 								e.preventDefault(); // Prevent any default action
-								this.toggleTheme(e.target);
+								this.toggleTheme(e.currentTarget);
 							});
             });
             
@@ -77,9 +76,7 @@ class ThemeSwitcher {
         this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
         this.applyTheme(this.currentTheme);
         this.saveTheme();
-				console.log(btn);
 				const btnAnchor = btn.firstElementChild;
-				console.log(btnAnchor);
 				btnAnchor.innerHTML = this.currentTheme === 'dark' ? '☀️' : '🌙';
         
         console.log(`Switched to ${this.currentTheme} theme`);
