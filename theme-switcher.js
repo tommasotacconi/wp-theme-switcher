@@ -58,10 +58,16 @@ class ThemeSwitcher {
         
         if (buttons.length) {
 					// Hook into the existing button
-					buttons.forEach(button => {
+					buttons.forEach((button, array) => {
 							button.addEventListener('click', (e) => {
 								e.preventDefault(); // Prevent any default action
-								this.toggleTheme(e.currentTarget);
+								this.toggleTheme();
+
+								// Change buttons emojis
+								array.forEach(button => {
+									const btnAnchor = button.firstElementChild;
+									btnAnchor.innerHTML = this.currentTheme === 'dark' ? '☀️' : '🌙';
+								})
 							});
             });
             
@@ -72,12 +78,10 @@ class ThemeSwitcher {
         }
     }
     
-    toggleTheme(btn) {
+    toggleTheme() {
         this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
         this.applyTheme(this.currentTheme);
         this.saveTheme();
-				const btnAnchor = btn.firstElementChild;
-				btnAnchor.innerHTML = this.currentTheme === 'dark' ? '☀️' : '🌙';
         
         console.log(`Switched to ${this.currentTheme} theme`);
     }
