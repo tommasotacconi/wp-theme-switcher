@@ -58,12 +58,13 @@ class ThemeSwitcher {
         
         if (buttons.length) {
 					// Hook into the existing button
-					buttons.forEach((button, array) => {
+					buttons.forEach((button, index, array) => {
 							button.addEventListener('click', (e) => {
 								e.preventDefault(); // Prevent any default action
 								this.toggleTheme();
 
 								// Change buttons emojis
+								console.log(array);
 								array.forEach(button => {
 									const btnAnchor = button.firstElementChild;
 									btnAnchor.innerHTML = this.currentTheme === 'dark' ? '☀️' : '🌙';
