@@ -5,7 +5,7 @@ body {
 	transition: color 0.6s, background-color 0.3s;
 
 	/* Buttons for theme switching in dark theme */
-	.wp-element-button.theme-toggle a.wp-block-button__link {
+	.wp-block-button.theme-toggle a.wp-block-button__link {
   	&:hover {
 			background-color: #e6edf3;
   	}
@@ -55,7 +55,7 @@ html.light-theme body{
 	}
 
 	/* Buttons for theme switching */
-	.wp-element-button.theme-toggle a.wp-block-button__link  {
+	.wp-block-button.theme-toggle a.wp-block-button__link  {
 		background-color: unset;
 		border-color: #24292f;
 
