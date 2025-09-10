@@ -42,7 +42,7 @@ function manage_theme_preference()
 				document.addEventListener('DOMContentLoaded', () => {
 					const buttons = document.querySelectorAll('.theme-toggle');
 					buttons.forEach(button => {
-						button.innerHTML = '🌙';
+						butto.firstElementChild.innerHTML = '🌙';
 					})
 				})
 			}
