@@ -29,11 +29,13 @@ class ThemeSwitcher {
 		// Find the button using various selectors
 		for (let selector of possibleSelectors) {
 			const selectorButtons = document.querySelectorAll(selector);
-						for (let button of selectorButtons)
-			if (button) {
-								buttons.push(button);
-				console.log(`Found theme button with selector: ${selector}`);
-			}
+				for (let button of selectorButtons) {
+					if (button) {
+						buttons.push(button);
+						
+						console.log(`Found theme button with selector: ${selector}`);
+					}
+				}
 		}
 		
 		// If no button found with common selectors, scan for buttons with theme-related text
