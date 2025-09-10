@@ -8,9 +8,6 @@ class ThemeSwitcher {
 	
 	init() {
 		document.addEventListener('DOMContentLoaded', () => {
-			// Apply saved theme immediately
-			this.applyTheme(this.currentTheme);
-			
 			// Find and hook existing button
 			this.findAndHookButtons();
 		});

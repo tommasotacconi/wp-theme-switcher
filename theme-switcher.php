@@ -32,11 +32,20 @@ function manage_theme_preference()
 {
 ?>
 	<script>
-		// Check theme preference immeidately
+		// Check theme preference immediately and set emoji if necessary
 		(function() {
-			let theme = localStorage.getItem('portfolio-theme') || 'light';
+			let theme = localStorage.getItem('portfolio-theme') || 'dark';
 			document.documentElement.setAttribute('data-theme', theme);
 			document.documentElement.className += ` ${theme}-theme`;
+
+			if (theme === 'light') {
+				document.addEventListener('DOMContentLoaded', () => {
+					const buttons = document.querySelectorAll('.theme-toggle');
+					buttons.forEach(button => {
+						button.innerHTML = '🌙';
+					})
+				})
+			}
 		})();
 	</script>
 <?php
