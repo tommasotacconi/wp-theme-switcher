@@ -4,12 +4,19 @@
 body {
 	transition: color 0.6s, background-color 0.3s;
 
+	/* Buttons for theme switching in dark theme */
+	.wp-element-button.theme-toggle {
+  	&:hover {
+			background-color: #e6edf3;
+  	}
+	}
+
 	/* Apply overlay to codex-block to transition linear gradient */
-	:where([style*="rgb(36,41,47) 98%);"]) {
+	[style*="rgb(36,41,47) 98%);"] {
 		position: relative;
 	}
 
-	:where([style*="rgb(36,41,47) 98%);"])::before {
+	[style*="rgb(36,41,47) 98%);"]::before {
 		content: '';
 		position: absolute;
 		inset: 0;
@@ -29,29 +36,32 @@ html.light-theme body{
 	}
 
 	/* CV/Bio block color */
-	:where(.has-contrast-color) {
+	.has-contrast-color {
 		color: #24292f !important;
 
 		/* link to internal page */
-		a[href="http://tacconiweb.com/dettagli-personali/"] {
+		a[href*="tacconiweb.com/dettagli-personali/"] {
 			color: #24292f;
+
+			&:hover {
+				color: #79c0ff;
+			}
 		}
 	}
 
 	/* Show codex-block linear gradient overlay */
-	:where([style*="rgb(36,41,47) 98%);"])::before {
+	[style*="rgb(36,41,47) 98%);"]::before {
 		opacity: 1;
 	}
 
-	/* Button for theme switching */
-	:where(.wp-element-button, .wp-block-button__link) {
+	/* Buttons for theme switching */
+	.wp-element-button.theme-toggle {
 		background-color: unset;
 		border-color: #24292f;
 
   	&:hover {
 			background-color: #24292f;
   	}
- }
-
+	}
 }
 
