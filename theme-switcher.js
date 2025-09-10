@@ -61,7 +61,7 @@ class ThemeSwitcher {
             buttons.forEach(button => {
 							button.addEventListener('click', (e) => {
 								e.preventDefault(); // Prevent any default action
-								this.toggleTheme();
+								this.toggleTheme(e.target);
 							});
             });
             
@@ -72,10 +72,13 @@ class ThemeSwitcher {
         }
     }
     
-    toggleTheme() {
+    toggleTheme(btn) {
         this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
         this.applyTheme(this.currentTheme);
         this.saveTheme();
+				const btnAnchor = btn.firstElementChild;
+				console.log(btnAnchor);
+				btnAnchor.innerHTML = this.currentTheme === 'dark' ? '☀️' : '🌙';
         
         console.log(`Switched to ${this.currentTheme} theme`);
     }
